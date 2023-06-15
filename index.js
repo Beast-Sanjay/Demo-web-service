@@ -17,6 +17,7 @@ app.get('/numbers', async (req, res) => {
       const response = await axios.get(url, { timeout: 500 });
       if (response.status === 200) {
         const data = response.data;
+        console.log(data);
         
         if (Array.isArray(data.numbers)) {
           data.numbers.forEach(number => numbers.add(number));
@@ -25,6 +26,8 @@ app.get('/numbers', async (req, res) => {
     } catch (error) {}
     
   }
+
+  console.log(numbers);
 
   const mergedNumbers = Array.from(numbers).sort((a, b) => a - b);
 
