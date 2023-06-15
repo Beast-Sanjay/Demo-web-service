@@ -26,11 +26,15 @@ app.get('/numbers', async (req, res) => {
     
   }
 
+  const mergedNumbers = Array.from(numbers).sort((a, b) => a - b);
+
+  res.json({ numbers: mergedNumbers });
+
   
 
  
 });
 
 app.listen(port, () => {
-  console.log(`Server listening on port ${PORT}`);
+  console.log(`Server listening on port ${port}`);
 });
