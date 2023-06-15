@@ -12,6 +12,22 @@ app.get('/numbers', async (req, res) => {
 
   const numbers = new Set();
 
+  for (const url of urls) {
+    try {
+      const response = await axios.get(url, { timeout: 500 });
+      if (response.status === 200) {
+        const data = response.data;
+        
+        if (Array.isArray(data.numbers)) {
+          data.numbers.forEach(number => numbers.add(number));
+        }
+      }
+    } catch (error) {}
+    
+  }
+
+  
+
  
 });
 
