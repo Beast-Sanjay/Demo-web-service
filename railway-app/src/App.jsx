@@ -1,26 +1,31 @@
-import React, { } from 'react'
-import './App.css'
 import { Route, Routes, Link } from 'react-router-dom'
-import ContactUs from './components/contactUs'
-import Home from './components/Home'
-import BookList from './components/BookList'
-import Book from './components/Book'
+import './App.css'
+import Home from './pages/Home'
+import Train_Names from './pages/Train_Names'
+// import Header from './pages/Header'
+
+import TrainDetails from './pages/TrainDetails';
+
+
 
 function App() {
+
   return (
     <>
       <nav>
         <Link to="/">Home</Link>
-        <Link to="/contact">Contact Us</Link>
-        <Link to="/book-list">Book List</Link>
+        <br></br>
+        <Link to="/TrainNames">Train Names</Link>
       </nav>
+      {/* <Header/> */}
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/contact' element={<ContactUs />} />
-        <Route path='/book-list' element={<BookList />} />
-        <Route path='/book/:id' element={<Book />} />
+        <Route path='/TrainNames' element={<Train_Names />} />
+        <Route path="/train/:trainNumber" element={<TrainDetails/>} />
+     
       </Routes>
     </>
   )
 }
+
 export default App
