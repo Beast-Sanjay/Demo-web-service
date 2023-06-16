@@ -12,11 +12,7 @@ function App() {
 
   return (
     <>
-      <nav>
-        <Link to="/">Home</Link>
-        <br></br>
-        <Link to="/TrainNames">Train Names</Link>
-      </nav>
+      
       {/* <Header/> */}
       <Routes>
         <Route path='/' element={<Home />} />
@@ -24,6 +20,13 @@ function App() {
         <Route path="/train/:trainNumber" element={<TrainDetails/>} />
      
       </Routes>
+      <nav>
+      <button type="button" class="btn btn-secondary btn-lg"><Link to="/" style={{textDecoration:'none', color:'white'}}><i class="fa-solid fa-house"></i>Home</Link></button>
+      <br></br>
+      <hr></hr>
+<button type="button" class="btn btn-secondary btn-lg"><Link to="/TrainNames" style={{textDecoration:'none', color:'white'}}>Train Names</Link></button>
+      
+      </nav>
     </>
   )
 }
